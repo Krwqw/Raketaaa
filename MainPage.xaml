@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="raketa1.MainPage"
+             xmlns:shapes="clr-namespace:Microsoft.Maui.Controls.Shapes;assembly=Microsoft.Maui.Controls">
+
+    <Grid>
+        <AbsoluteLayout>
+            <!--треугольник справа-->
+
+            <shapes:Path 
+                x:Name="Fire_right"
+                Data="M0,700 L300,400 L0,0 Z"
+                Fill="DarkGray"
+                AbsoluteLayout.LayoutBounds="478, 237, 90, 80"
+                AbsoluteLayout.LayoutFlags="None"/>
+
+            <!--треугольник слева-->
+            <shapes:Path 
+                x:Name="Fire_left"
+                Data="M0,100 L100,100 L100,0 Z"
+                Fill="DarkGrey"
+                AbsoluteLayout.LayoutBounds="261, 230, 90, 90"
+                AbsoluteLayout.LayoutFlags="None"/>
+
+            <!--Верхушка ракеты-->
+            <Ellipse
+                Fill="Grey"
+                AbsoluteLayout.LayoutBounds="350, 10, 130, 290"
+                AbsoluteLayout.LayoutFlags="None"/>
+            <!--Середина ракеты-->
+            <BoxView
+                Color="Grey"
+                AbsoluteLayout.LayoutBounds="351, 159, 128, 150"
+                AbsoluteLayout.LayoutFlags="None"/>
+            
+            <!--Главный генератор ракеты-->
+            <BoxView
+                x:Name="Fire_center"
+                Color="DarkGrey"
+                AbsoluteLayout.LayoutBounds="365, 309, 100, 10"
+                AbsoluteLayout.LayoutFlags="None"/>
+
+            <!--Окно ракеты 1-->
+            <Ellipse
+                x:Name ="Window1"
+                Fill="Black"
+                Stroke="Black"
+                StrokeThickness="5"
+                AbsoluteLayout.LayoutBounds="380, 80, 70, 70"
+                AbsoluteLayout.LayoutFlags="None"/>
+
+            <!--Окно ракеты 2-->
+            <Ellipse
+                x:Name="Window2"
+                Fill="Black"
+                Stroke="Black"
+                StrokeThickness="5"
+                AbsoluteLayout.LayoutBounds="380, 200, 70, 70"
+                AbsoluteLayout.LayoutFlags="None"/>
+            <VerticalStackLayout>
+                <Button 
+                x:Name="Button1"
+                Text="Запустить ракету"
+                Clicked="OnFire"
+                Margin="15,15"
+                HeightRequest="30"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"/>
+
+                <Button 
+                x:Name="Button2"
+                Text="Остановить ракету"
+                Clicked="OffFire"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                Margin="15,15"
+                HeightRequest="30"/>
+            </VerticalStackLayout>
+
+            <Image 
+                x:Name="Fire1"
+                Source="fire.png"
+                WidthRequest="100"
+                HeightRequest="100"
+                IsVisible="False"
+                AbsoluteLayout.LayoutBounds="460, 315, 100, 100"
+                ScaleY="-1"/>
+
+            <Image 
+                x:Name="Fire2"
+                Source="fire.png"
+                WidthRequest="100"
+                HeightRequest="100"
+                IsVisible="False"
+                AbsoluteLayout.LayoutBounds="260, 315, 100, 100"
+                ScaleY="-1"/>
+
+
+            <Image 
+                x:Name="Fire3"
+                Source="fire.png"
+                WidthRequest="150"
+                HeightRequest="150"
+                IsVisible="False"
+                AbsoluteLayout.LayoutBounds="340, 318, 150, 150"
+                ScaleY="-1"/>
+
+
+        </AbsoluteLayout>
+    </Grid>
+    
+
+</ContentPage>
